@@ -1,0 +1,29 @@
+.bgc{
+    background-color: black;
+}
+.main__title{
+    text-align: center;
+    margin-bottom: 50px;
+    color: wheat;
+}
+.wrapper__center{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;     
+  gap: 15px;              
+}
+button{
+    width: 100px;
+    height: 100px;
+    background-color: wheat;    
+}
+.user__field{
+    width: 300px;
+    background-color: wheat;
+}
+.user__buttons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
