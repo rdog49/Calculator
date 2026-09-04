@@ -4,66 +4,52 @@
     box-sizing: border-box;
 }
 .bgc{
-    background-color: wheat;
+    background: linear-gradient(to right, rgb(87, 223, 250), rgb(64, 255, 137));
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.wrapper__center{
-  display: flex;
-  flex-direction: column; 
-  align-items: center;    
-  text-align: center;              
-  margin-top: 50px;    
-}
-button{
+button {
     width: 100px;
     height: 100px;   
-    border-radius: 5px;
+    border: none;
+    background-color: #d7fff4;
+    font-size: 30px;
+    cursor: pointer;
 }
 .calculator{
-    gap: 10px;
+    margin-top: 50px;
     display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(0, 0, 0);
-    border: solid black 2px;
-    padding: 30px 40px 60px;
-    border-radius: 15px;
+    flex-direction: column;
+    width: 515px;
     box-shadow: 
-  0 0 0 1px rgba(0, 0, 0, 0.08), 
-  0 25px 40px -12px rgba(0, 0, 0, 0.25), 
-  0 12px 16px -8px rgba(0, 0, 0, 0.15);
-    width: 500px;
-    height: 660px;
+        0 0 0 1px rgba(0, 0, 0, 0.08), 
+        0 25px 40px -12px rgba(0, 0, 0, 0.25), 
+        0 12px 16px -8px rgba(0, 0, 0, 0.15);
 }
-.number-gray{
-    background-color: gray;
-    font-size: 30px;
+.numbers {
+    border: solid white 2px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 ровных колонок */
+    gap: 3px;
+    background-color: #fff;
 }
-.number-yell{
-    background-color: #FFD800;
-    font-size: 30px;
-}
-.number-yell-eq{
-    background-color: #FFD800;
-    font-size: 30px;
-}
-.number{
-    font-size: 30px;
-}
-.number-yell:hover, .number-yell:active{
-    background-color: #c5a700;
-}
-.number-gray:hover, .number-gray:active{
-    background-color: rgb(166, 166, 166);
-}
-.number-yell-eq:hover, .number-yell-eq:active{
-    background-color: #c5a700;
-}
-.display{
-    color: white;
-    text-align: end;
+.display {
+    background-color: #444444;
+    color: rgb(255, 255, 255);
+    padding: 15px 20px;
+    text-align: right;
     width: 100%;
-    font-size: 40px;
+    height: 100px;
+    font-size: 60px;
     overflow: hidden;
+    opacity: 0.9;
 }
-.number-cool{
-    border: solid rgb(249, 115, 115) 2px;
+.number-wide {
+    grid-column: span 2;
+    width: 100%;
+}
+.number-high {
+    grid-row: span 2;  
+    height: 100%;
 }
