@@ -1,7 +1,6 @@
 const display = document.querySelector('.display');
 const displayPrev = document.querySelector('.previosNumber');
 const displayCurr = document.querySelector('.currentNumber');
-const formattedNumbers = display.map(num => num.toLocaleString('en-US'));
 
 
 class Calculator {
@@ -11,13 +10,29 @@ class Calculator {
         this.operator = '';
     }
 
+    formatNumber(value) {
+        if (value === '' || value === null || value === undefined) return '';
+        if (value === '-') return '-';
+        const sign = value.startsWith('-') ? '-' : '';
+        const abs = sign ? value.slice(1) : value;
+        const parts = abs.split('.');
+        const intPart = parts[0] || '0';
+        const decPart = parts[1];
+        const intNumber = intPart === '' ? 0 : Number(intPart);
+        const intFormatted = Number.isNaN(intNumber) ? intPart : intNumber.toLocaleString('en-US');
+        return decPart ? `${sign}${intFormatted}.${decPart}` : `${sign}${intFormatted}`;
+    }
+
     render() {
         if (this.operator && this.secondNumber !== '') {
-            display.textContent = `${this.firstNumber}${this.operator}${this.secondNumber}`;
+            displayPrev.textContent = `${this.formatNumber(this.firstNumber)} ${this.operator}`;
+            displayCurr.textContent = this.formatNumber(this.secondNumber);
         } else if (this.operator && this.secondNumber === '') {
-            display.textContent = `${this.firstNumber}${this.operator}`;
+            displayPrev.textContent = `${this.formatNumber(this.firstNumber)} ${this.operator}`;
+            displayCurr.textContent = '';
         } else {
-            display.textContent = this.firstNumber || '';
+            displayPrev.textContent = '';
+            displayCurr.textContent = this.formatNumber(this.firstNumber) || '';
         }
     }
 
@@ -25,7 +40,8 @@ class Calculator {
         this.firstNumber = '';
         this.secondNumber = '';
         this.operator = '';
-        display.textContent = '';
+        if (displayPrev) displayPrev.textContent = '';
+        if (displayCurr) displayCurr.textContent = '';
     }
 
     addDigit(value) {
