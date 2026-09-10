@@ -6,7 +6,7 @@
 
 - [деплой](https://rdog49.github.io/Calculator/)
 ## Условия задачи
-The calculator performs mathematical operations: addition, subtraction, multiplication, division, square root and exponentiation. There is a decimal point, actions with multi-digit numbers, the ability to perform several actions in a row, clear the result.
+The сalсulator performs mathematical operations: addition, subtraction, multiplication, division, square root and exponentiation. There is a decimal point, actions with multi-digit numbers, the ability to perform several actions in a row, clear the result.
 The calculator can perform actions on both positive and negative numbers. For example, you can divide -9 by -3. When you enter a negative number, a minus sign appears in front of it.
 JavaScript can't count fractions correctly. The calculator is taught to do this.
 
