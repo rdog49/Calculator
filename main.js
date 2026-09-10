@@ -99,6 +99,10 @@ class Calculator {
                 result = b;
         }
 
+         if (typeof result === 'number' && !Number.isNaN(result)) 
+            result = parseFloat(result.toPrecision(12));
+
+
         if (result === 'error') {
             this.clear();
             display.textContent = 'error';
